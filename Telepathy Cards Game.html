@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Telepathy Cards Game | Pemrograman Struktur - Kelompok 7</title>
+    <link rel="stylesheet" href="design.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+      .game-area {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center-content">
+        <div class="title-wrapper">
+          <img src="images/icon-html.png" alt="Logo" class="logo">
+          <h1>Telepathy Cards Game</h1>
+        </div>
+        <button onclick="startGame()">Play</button>
+      </div>
+    </div>
+    <div id="gameArea" class="game-area">
+      <div class="wrapper">
+        <ul class="cards">
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-1.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-6.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-3.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-2.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-1.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-5.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-2.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-6.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-3.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-5.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="images/que_icon.svg" alt="icon">
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img">
+            </div>
+          </li>
+          <div class="details">
+            <p class="time">Time : <span><b>30</b>s</span></p>
+            <p class="moves">Incorrect : <span><b>10</b></span></p>
+            <button>Refresh</button>
+          </div>
+        </ul>
+      </div>
+
+    <div id="gameOverModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Game Over!</h2>
+          <p>You have made 10 wrong moves.</p>
+      </div>
+    </div> 
+
+    <div id="congratulationsModal" class="modal">
+      <div class="modal-content">
+          <span class="congratulationsClose">&times;</span>
+          <h2>Congratulations!</h2>
+          <p>You have succesfully complete the game.</p>
+      </div>
+    </div>
+
+    <div id="timeUpModal" class="modal">
+      <div class="modal-content">
+          <span class="timeUpClose">&times;</span>
+          <h2>Time's Up!</h2>
+          <p>Sorry, your time has run out.</p>
+      </div>
+    </div>
+  
+    <script src="code.js"></script>
+    </script>
+  </body>
+</html>
